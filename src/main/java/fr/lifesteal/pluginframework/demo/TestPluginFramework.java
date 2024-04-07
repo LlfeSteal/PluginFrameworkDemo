@@ -26,10 +26,10 @@ public class TestPluginFramework extends PluginBase {
 
     @Override
     public void init() {
-        var langConfigRepository = getConfigRepositoryFactory().getNewYamlConfigFactory("demo", "lang.yml");
+        var langConfigRepository = getConfigRepositoryFactory().getNewYamlRepository("demo", "lang.yml");
         demoLangService = new DemoLangService(getLogger(), langConfigRepository);
 
-        var configRepository = getConfigRepositoryFactory().getNewYamlConfigFactory("demo", "config.yml");
+        var configRepository = getConfigRepositoryFactory().getNewYamlRepository("demo", "config.yml");
         demoConfigService = new DemoConfigService(getLogger(), configRepository);
     }
 
