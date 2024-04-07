@@ -1,0 +1,5 @@
+name: 'PluginFrameworkDemo'
+version: '1.0.0'
+main: fr.lifesteal.pluginframework.demo.TestPluginFramework
+author: Lifesteal
+api-version: 1.20
