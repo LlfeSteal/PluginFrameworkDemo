@@ -25,6 +25,14 @@ public class DemoLangService extends ConfigServiceBase {
         add("&6Wiki 4 orange");
     }};
 
+    @Colorized
+    @ConfigParam(paramKey = "messages.error.unknow-demodata-id")
+    private String unknowDemoDataIdErrorMessage = "&cUnknown demo id : &f%demodata_id%";
+
+    @Colorized
+    @ConfigParam(paramKey = "messages.info.display-demodata")
+    private String displayDataItemMessage = "&aYou selected data : %demodata_name%";
+
     public DemoLangService(Logger logger, ConfigRepository configRepository) {
         super(logger, configRepository);
     }
@@ -35,5 +43,13 @@ public class DemoLangService extends ConfigServiceBase {
 
     public List<String> getWikiMessages() {
         return wikiMessages;
+    }
+
+    public String getUnknowDemoDataIdErrorMessage(String demoId) {
+        return unknowDemoDataIdErrorMessage.replaceAll("%demodata_id%", demoId);
+    }
+
+    public String getDisplayDataItemMessage(String demoName) {
+        return displayDataItemMessage.replaceAll("%demodata_name%", demoName);
     }
 }
