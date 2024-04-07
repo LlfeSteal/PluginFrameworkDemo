@@ -94,8 +94,48 @@ protected List<ConfigService> registerConfigurationsServices() {
         add(new MyConfigService(...));
     }};
 }
-
 ```
+
+Complex objects are supported but extra code is needed.
+
+Model delcaration : 
+```java
+public class MyCustomModel extends ConfigModel {
+    private int id;
+    private String name;
+
+    public MyCustomModel(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public MyCustomModel(Map<String, Object> args) {
+        super(args);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public ConfigModel clone() {
+        return new MyCustomModel(this.id, this.name);
+    }
+}
+```
+
+Deserialization declaration :
+```java
+static {
+    ConfigurationSerialization.registerClass(MyCustomModel.class);
+}
+```
+
+
 
 JSON Support is coming soon...
 
