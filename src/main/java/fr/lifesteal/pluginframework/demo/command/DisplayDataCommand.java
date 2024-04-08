@@ -4,11 +4,13 @@ import fr.lifesteal.pluginframework.core.command.CommandExecutor;
 import fr.lifesteal.pluginframework.demo.business.DemoConfigService;
 import org.bukkit.command.CommandSender;
 
+import java.util.Map;
+
 public class DisplayDataCommand extends CommandExecutor {
     private final DemoConfigService demoConfigService;
 
-    public DisplayDataCommand(CommandSender issuer, String[] args, DemoConfigService demoConfigService) {
-        super(issuer, args);
+    public DisplayDataCommand(CommandSender issuer, Map<String, String> parameters, DemoConfigService demoConfigService) {
+        super(issuer, parameters);
         this.demoConfigService = demoConfigService;
     }
 
