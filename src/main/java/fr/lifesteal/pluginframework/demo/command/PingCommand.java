@@ -10,8 +10,8 @@ public class PingCommand extends CommandExecutor {
 
     private final DemoLangService demoLangService;
 
-    public PingCommand(CommandSender issuer, Map<String, String> parameters, DemoLangService demoLangService) {
-        super(issuer, parameters);
+    public PingCommand(CommandSender issuer, Map<String, String> namedArgs, DemoLangService demoLangService) {
+        super(issuer, namedArgs);
         this.demoLangService = demoLangService;
     }
 

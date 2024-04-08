@@ -10,8 +10,8 @@ public class WikiCommand extends CommandExecutor {
 
     private final DemoLangService demoLangService;
 
-    public WikiCommand(CommandSender issuer, Map<String, String> parameters, DemoLangService demoLangService) {
-        super(issuer, parameters);
+    public WikiCommand(CommandSender issuer, Map<String, String> namedArgs, DemoLangService demoLangService) {
+        super(issuer, namedArgs);
         this.demoLangService = demoLangService;
     }
 

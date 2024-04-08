@@ -18,8 +18,8 @@ public class DisplayDataItemCommand extends CommandExecutor {
     private final DemoLangService demoLangService;
     private DemoData selectedData;
 
-    public DisplayDataItemCommand(CommandSender issuer, Map<String, String> parameters, DemoConfigService demoConfigService, DemoLangService demoLangService) {
-        super(issuer, parameters);
+    public DisplayDataItemCommand(CommandSender issuer, Map<String, String> namedArgs, DemoConfigService demoConfigService, DemoLangService demoLangService) {
+        super(issuer, namedArgs);
         this.demoConfigService = demoConfigService;
         this.demoLangService = demoLangService;
     }
