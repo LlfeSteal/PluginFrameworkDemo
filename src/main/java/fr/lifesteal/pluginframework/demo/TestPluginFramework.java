@@ -63,7 +63,7 @@ public class TestPluginFramework extends PluginBase {
                     .addAlias("data")
                     .setDefaultCommand(getCommandBaseBuilder()
                             .setPermission("demo.displayData")
-                            .setUsage("displayData [command]")
+                            .setUsage("displayData <command>")
                             .setExecutorType(DisplayDataCommand.class)
                             .addExtraArgument(demoConfigService)
                             .build())
