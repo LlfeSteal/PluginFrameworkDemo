@@ -9,8 +9,8 @@ import java.util.Map;
 public class DisplayDataCommand extends CommandExecutor {
     private final DemoConfigService demoConfigService;
 
-    public DisplayDataCommand(CommandSender issuer, Map<String, String> parameters, DemoConfigService demoConfigService) {
-        super(issuer, parameters);
+    public DisplayDataCommand(CommandSender issuer, Map<String, String> namedArgs, DemoConfigService demoConfigService) {
+        super(issuer, namedArgs);
         this.demoConfigService = demoConfigService;
     }
 
