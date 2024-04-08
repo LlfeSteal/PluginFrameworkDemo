@@ -4,12 +4,14 @@ import fr.lifesteal.pluginframework.core.command.CommandExecutor;
 import fr.lifesteal.pluginframework.demo.business.DemoLangService;
 import org.bukkit.command.CommandSender;
 
+import java.util.Map;
+
 public class PingCommand extends CommandExecutor {
 
     private final DemoLangService demoLangService;
 
-    public PingCommand(CommandSender issuer, String[] args, DemoLangService demoLangService) {
-        super(issuer, args);
+    public PingCommand(CommandSender issuer, Map<String, String> parameters, DemoLangService demoLangService) {
+        super(issuer, parameters);
         this.demoLangService = demoLangService;
     }
 

@@ -34,6 +34,24 @@ public class MyCommand extends CommandExecutor {
 }
 ```
 
+Get your command parameters by name
+
+(Name and positions are extracted from command usage declaration)
+
+example with command usage ```"myCommand [myParameterName]"``` :
+
+```java
+@Override
+public boolean prepare(){
+        var myParameter=getArg("myParameterName");
+        var parsedParameter=StringUtils.tryParseInteger(inputDataId);
+        if(parsedParameter==null){
+        getIssuer().sendMessage("The parameter value need to be a number.")
+        return false;
+        }
+        }
+```
+
 Declaration and registration : 
 ```java
 @Override

@@ -8,8 +8,8 @@ import fr.lifesteal.pluginframework.demo.business.DemoLangService;
 import fr.lifesteal.pluginframework.demo.business.object.DemoData;
 import org.bukkit.command.CommandSender;
 
-import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class DisplayDataItemCommand extends CommandExecutor {
@@ -18,15 +18,15 @@ public class DisplayDataItemCommand extends CommandExecutor {
     private final DemoLangService demoLangService;
     private DemoData selectedData;
 
-    public DisplayDataItemCommand(CommandSender issuer, String[] args, DemoConfigService demoConfigService, DemoLangService demoLangService) {
-        super(issuer, args);
+    public DisplayDataItemCommand(CommandSender issuer, Map<String, String> parameters, DemoConfigService demoConfigService, DemoLangService demoLangService) {
+        super(issuer, parameters);
         this.demoConfigService = demoConfigService;
         this.demoLangService = demoLangService;
     }
 
     @Override
     public boolean prepare() {
-        var inputDataId = getArgs()[1];
+        var inputDataId = getArg("item");
         var dataId = StringUtils.tryParseInteger(inputDataId);
         if (dataId == null) {
             getIssuer().sendMessage(this.demoLangService.getUnknowDemoDataIdErrorMessage(inputDataId));
