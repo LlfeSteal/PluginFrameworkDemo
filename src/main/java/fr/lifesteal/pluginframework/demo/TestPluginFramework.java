@@ -4,6 +4,8 @@ import fr.lifesteal.pluginframework.api.config.ConfigService;
 import fr.lifesteal.pluginframework.core.plugin.PluginBase;
 import fr.lifesteal.pluginframework.demo.business.DemoConfigService;
 import fr.lifesteal.pluginframework.demo.business.DemoLangService;
+import fr.lifesteal.pluginframework.demo.business.contract.DemoConfigurationService;
+import fr.lifesteal.pluginframework.demo.business.contract.DemoLanguageService;
 import fr.lifesteal.pluginframework.demo.business.object.DemoData;
 import fr.lifesteal.pluginframework.demo.command.DisplayDataCommand;
 import fr.lifesteal.pluginframework.demo.command.DisplayDataItemCommand;
@@ -22,8 +24,8 @@ public class TestPluginFramework extends PluginBase {
         ConfigurationSerialization.registerClass(DemoData.class, "DemoData");
     }
 
-    private DemoLangService demoLangService;
-    private DemoConfigService demoConfigService;
+    private DemoLanguageService demoLangService;
+    private DemoConfigurationService demoConfigService;
 
     @Override
     public void init() {
