@@ -1,7 +1,6 @@
 package fr.lifesteal.pluginframework.demo;
 
 import fr.lifesteal.pluginframework.api.config.ConfigService;
-import fr.lifesteal.pluginframework.core.command.PluginCommand;
 import fr.lifesteal.pluginframework.core.plugin.PluginBase;
 import fr.lifesteal.pluginframework.demo.business.DemoConfigService;
 import fr.lifesteal.pluginframework.demo.business.DemoLangService;
@@ -10,6 +9,7 @@ import fr.lifesteal.pluginframework.demo.command.DisplayDataCommand;
 import fr.lifesteal.pluginframework.demo.command.DisplayDataItemCommand;
 import fr.lifesteal.pluginframework.demo.command.PingCommand;
 import fr.lifesteal.pluginframework.demo.command.WikiCommand;
+import org.bukkit.command.Command;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.event.Listener;
 
@@ -35,7 +35,7 @@ public class TestPluginFramework extends PluginBase {
     }
 
     @Override
-    protected List<PluginCommand> registerCommands() {
+    protected List<Command> registerCommands() {
         return new ArrayList<>() {{
             add(getPluginCommandFactory()
                     .setName("ping")
