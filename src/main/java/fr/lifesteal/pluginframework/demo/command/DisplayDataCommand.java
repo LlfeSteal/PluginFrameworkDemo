@@ -1,15 +1,15 @@
 package fr.lifesteal.pluginframework.demo.command;
 
 import fr.lifesteal.pluginframework.core.command.CommandExecutor;
-import fr.lifesteal.pluginframework.demo.business.DemoConfigService;
+import fr.lifesteal.pluginframework.demo.business.contract.DemoConfigurationService;
 import org.bukkit.command.CommandSender;
 
 import java.util.Map;
 
 public class DisplayDataCommand extends CommandExecutor {
-    private final DemoConfigService demoConfigService;
+    private final DemoConfigurationService demoConfigService;
 
-    public DisplayDataCommand(CommandSender issuer, Map<String, String> namedArgs, DemoConfigService demoConfigService) {
+    public DisplayDataCommand(CommandSender issuer, Map<String, String> namedArgs, DemoConfigurationService demoConfigService) {
         super(issuer, namedArgs);
         this.demoConfigService = demoConfigService;
     }

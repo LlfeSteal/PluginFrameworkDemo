@@ -4,12 +4,13 @@ import fr.lifesteal.pluginframework.api.config.ConfigRepository;
 import fr.lifesteal.pluginframework.core.config.Colorized;
 import fr.lifesteal.pluginframework.core.config.ConfigParam;
 import fr.lifesteal.pluginframework.core.config.ConfigServiceBase;
+import fr.lifesteal.pluginframework.demo.business.contract.DemoLanguageService;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-public class DemoLangService extends ConfigServiceBase {
+public class DemoLangService extends ConfigServiceBase implements DemoLanguageService {
 
     @Colorized
     @ConfigParam(paramKey = "messages.info.pong")
@@ -37,18 +38,22 @@ public class DemoLangService extends ConfigServiceBase {
         super(logger, configRepository);
     }
 
+    @Override
     public String getPongMessage() {
         return pongMessage;
     }
 
+    @Override
     public List<String> getWikiMessages() {
         return wikiMessages;
     }
 
+    @Override
     public String getUnknowDemoDataIdErrorMessage(String demoId) {
         return unknowDemoDataIdErrorMessage.replaceAll("%demodata_id%", demoId);
     }
 
+    @Override
     public String getDisplayDataItemMessage(String demoName) {
         return displayDataItemMessage.replaceAll("%demodata_name%", demoName);
     }

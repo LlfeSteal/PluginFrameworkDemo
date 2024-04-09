@@ -3,8 +3,8 @@ package fr.lifesteal.pluginframework.demo.command;
 import com.google.common.collect.ImmutableList;
 import fr.lifesteal.pluginframework.core.command.CommandExecutor;
 import fr.lifesteal.pluginframework.core.utils.StringUtils;
-import fr.lifesteal.pluginframework.demo.business.DemoConfigService;
-import fr.lifesteal.pluginframework.demo.business.DemoLangService;
+import fr.lifesteal.pluginframework.demo.business.contract.DemoConfigurationService;
+import fr.lifesteal.pluginframework.demo.business.contract.DemoLanguageService;
 import fr.lifesteal.pluginframework.demo.business.object.DemoData;
 import org.bukkit.command.CommandSender;
 
@@ -14,11 +14,11 @@ import java.util.stream.Collectors;
 
 public class DisplayDataItemCommand extends CommandExecutor {
 
-    private final DemoConfigService demoConfigService;
-    private final DemoLangService demoLangService;
+    private final DemoConfigurationService demoConfigService;
+    private final DemoLanguageService demoLangService;
     private DemoData selectedData;
 
-    public DisplayDataItemCommand(CommandSender issuer, Map<String, String> namedArgs, DemoConfigService demoConfigService, DemoLangService demoLangService) {
+    public DisplayDataItemCommand(CommandSender issuer, Map<String, String> namedArgs, DemoConfigurationService demoConfigService, DemoLanguageService demoLangService) {
         super(issuer, namedArgs);
         this.demoConfigService = demoConfigService;
         this.demoLangService = demoLangService;
